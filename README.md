@@ -10,13 +10,15 @@ Neste repositório, encontram-se exemplos de código utilizados em sala de aula.
 
 O principal material de estudo usado nas disciplinas é o
 [**_CPA: Programming Essentials in C++_**](https://www.netacad.com/pt-br/courses/programming/essentials-programming-c-plus-plus/) -
-Desenvolvido por: [Networking Academy](https://www.netacad.com/)
+Desenvolvido por: [Networking Academy](https://www.netacad.com/). Ainda, são indicados os seguintes livros:
+[C++ Primer 5th Edition](https://www.amazon.com/Primer-5th-Stanley-B-Lippman/dp/0321714113) e [C++ Primer Plus 6th Edition](https://www.amazon.com/Primer-Plus-6th-Developers-Library/dp/0321776402/). Outras fontes de leitura serão indicadas pelo professor.
 
 ## Pré-requisitos
 
 - [C++](https://isocpp.org/std/the-standard/)
-- Um ambiente integrado de desenvolvimento (e.g., [CLion](https://www.jetbrains.com/pt-br/clion/), [Code::Blocks](https://www.codeblocks.org/),  [Eclipse IDE for C/C++ Developers](https://www.eclipse.org/) ou [C++ Shell](https://cpp.sh/))
-- ou até um editor de texto simples (e.g., [Visual Code](https://code.visualstudio.com/))
+- Um ambiente integrado de desenvolvimento (e.g., [CLion](https://www.jetbrains.com/pt-br/clion/), [Code::Blocks](https://www.codeblocks.org/),  [Eclipse IDE for C/C++ Developers](https://www.eclipse.org/)
+- Editores para desenvolvimento online (e.g., [C++ Shell](https://cpp.sh/))
+- ou até um editor de texto simples (e.g., [Visual Code](https://code.visualstudio.com/) com a [C/C++ extension](https://code.visualstudio.com/docs/languages/cpp) instalada)
 
 ## Instalação
 
