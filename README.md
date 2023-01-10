@@ -16,7 +16,7 @@ Desenvolvido por: [Networking Academy](https://www.netacad.com/). Ainda, são in
 ## Pré-requisitos
 
 - [GNU g++ Compiler](http://gcc.gnu.org) ou [MinGW-W64](https://www.mingw-w64.org/)
-- [C++ Documentation](https://cplusplus.com/reference/)
+- [C++ Documentation](https://en.cppreference.com/)
 - Um ambiente integrado de desenvolvimento (e.g., [CLion](https://www.jetbrains.com/pt-br/clion/), [CodeLite](https://codelite.org/), [Dev-C++](http://orwelldevcpp.blogspot.com/), [KDevelop](https://www.kdevelop.org/), [Code::Blocks](https://www.codeblocks.org/),  [Eclipse IDE for C/C++ Developers](https://www.eclipse.org/))
 - Editor web-based (e.g., [C++ Shell](https://cpp.sh/))
 - ou até um editor de texto simples (e.g., [Visual Code](https://code.visualstudio.com/) com a [C/C++ extension](https://code.visualstudio.com/docs/languages/cpp) instalada)
