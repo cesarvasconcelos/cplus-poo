@@ -1,0 +1,89 @@
+DISCLAIMER:
+-----------
+Apesar de ser possível usar o gcc para compilar e linkar programas em C++, de acordo com a documentação oficinal, evite fazê-lo.
+
+    "When you compile C++ programs, you should invoke GCC as g++ instead."
+    [https://man7.org/linux/man-pages/man1/g++.1.html]
+
+Uma das razões é que o gcc usa a extensão para considerar um arquivo como C ou C++.
+    "In naming a source file, you must use the proper suffix to identify the file as a C++ file. This not only tells you that the file is C++ source code, it tells the compiler that, too. The extension you use depends on the C++ implementation."
+
+Se você usar extensão .c, gcc pensará que é um programa C e não C++ (a não ser que extensão .C em uppercase seja usada ou .cc); Mesmo assim, de acordo com a documentação: "the use of gcc does not add the C++ library". Vide abaixo:
+
+    https://gcc.gnu.org/onlinedocs/gcc/Invoking-G_002b_002b.html
+
+    "You should link the std C++ library in gcc by passing -lstdc++ parameter"
+    gcc hello.C -lstdc++ -o hello (trabalhoso!)
+
+Por outro lado, quando se usa o g++:
+----------------------------
+"g++ is a program that calls GCC and automatically specifies linking against the C++ library.
+It treats ‘.c’, ‘.h’ and ‘.i’ files as C++ source files instead of C source files"
+
+Exemplo:
+$g++ hello.C -o test (sem o -lstdc++; poderia ser hello.cpp)
+
+
++--- comandos úteis no g++ --+
+
+# compilação e linkagem
+# se opção "-o" for omitida, saída será escrita em "a.out"
+# código-objeto hello.o *não* será escrito na saída
+$ g++ hello.cpp
+$ ./a.out
+
+# compilação e linkagem (definindo nome do executável)
+# saída será escrita em "hello"
+# código-objeto hello.o *não* será escrito na saída
+$ g++ hello.cpp -o hello
+$ ./hello
+
+# só compilação (opção -c)
+# código-objeto hello.o será escrito na saída
+$  g++ -c hello.cpp
+# agora linkagem a partir do código-objeto
+$  g++ hello.o -o hello
+$  ./hello
+
+# só compilação (com outras opções).
+# Vide documentação https://man7.org/linux/man-pages/man1/g++.1.html
+    -g - turn on debugging (so GDB gives more friendly output)
+    -Wall - turns on most warnings
+    -o <name> - name of the output file
+    -c - output an object file (.o)
+# -Wall: ativa os warnings do compilador
+# -std= informa qual standard o g++ irá usar, e.g., c++11, c++98, ...
+# exemplos: -std=c++98, gnu++98 ou -std=c++11, gnu++11
+# Vide: https://man7.org/linux/man-pages/man1/g++.1.html
+$ g++ -Wall -c -std=c++98 hello.cpp
+
+# agora linkagem
+$  g++ hello.o -o hello
+$  ./hello
+
+# compilação + linkagem com opções:
+# -Wall: ativa os warnings do compilador
+# se opção "-o" for omitida, saída será escrita em "a.out"
+# -std= informa qual standard o g++ irá usar, e.g., c++11, c++98, ...
+# Vide https://man7.org/linux/man-pages/man1/g++.1.html
+$ g++ -Wall -std=c++98 hello.cpp
+$ ./a.out
+
+# compilação + linkagem de múltiplos arquivos:
+# se opção "-o" for omitida, saída será escrita em "a.out"
+$ g++ -Wall -std=c++98 modulo.hpp modulo.cpp main_modulo.cpp
+$ ./a.out
+
+# compilação de múltiplos arquivos:
+$ g++ -Wall -c -std=c++98 modulo.hpp modulo.cpp main_modulo.cpp
+$ g++ -o meuexec modulo.o main_modulo.o
+$  ./meuexec
+
+DEBUG:
+
+# Instale o gdb: apt install gdb
+$ g++ -Wall -std=c++98 -g hello.cpp -o teste // observe o "-g"
+
+Agora leia:
+http://www.lrc.ic.unicamp.br/~luciano/courses/mc202-2s2009/tutorial_gdb.txt
+https://ccrma.stanford.edu/~jos/stkintro/Useful_commands_gdb.html
