@@ -30,6 +30,9 @@ int main( void )
     pointer->brand = "Ferrari"; // arrow operator approach
     pointer->model = "F50";
 
+    Car *p2 = pointer;
+    Car *p3 = &carObj1;
+
     cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
     cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
     cout << (*pointer).brand << " " << (*pointer).model << " " << (*pointer).year << "\n";
@@ -42,6 +45,14 @@ int main( void )
 
     for ( Car each : vec_cars )
         cout << each.brand << " " << each.model << " " << each.year << "\n";
+
+    Car *p4 = &vec_cars.at( 0 );
+
+    while  ( p4->year < 2012 )
+    {
+        cout << p4->model << endl;
+        p4++;
+    }
 
     delete pointer;
 
