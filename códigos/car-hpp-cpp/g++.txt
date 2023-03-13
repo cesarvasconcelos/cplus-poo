@@ -1,0 +1,4 @@
+# passos caso queira compilar os módulos via terminal
+1)g++ -c -std=c++11  Car.hpp Car.cpp main.cpp
+2)g++ -o meuexec Car.o main.o
+3)./meuexec
